@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <section>
+    
+    <div class="main__container" id="blur">
+
+      <img src="assets/images/bg-sidebar-desktop.svg" alt="" class="sidebar-img">
+
+        <div class="steps-container">;
+
+          <div class="steps">
+            <div class="step">
+
+              <div>
+                <span class="step-highlight sh--1" data-step="1">1</span>
+              </div>
+    
+              <div>
+                <h4>STEP 1</h4>
+                <h3>YOUR INFO</h3>
+              </div>
+  
+            </div>
+  
+            <div class="step">
+              
+              <div>
+                <span class="step-highlight sh--2" data-step="2">2</span>
+              </div>
+    
+              <div>
+                <h4>STEP 2</h4>
+                <h3>SELECT PLAN</h3>
+              </div>
+  
+            </div>
+  
+            <div class="step">
+              
+              <div>
+                <span class="step-highlight sh--3" data-step="3">3</span>
+              </div>
+    
+              <div>
+                <h4>STEP 3</h4>
+                <h3>ADD-ONS</h3>
+              </div>
+  
+            </div>
+  
+            <div class="step">
+              
+              <div>
+                <span class="step-highlight sh--4" data-step="4">4</span>
+              </div>
+    
+              <div>
+                <h4>STEP 4</h4>
+                <h3>SUMMARY</h3>
+              </div>
+  
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Step One -->
+
+        <div class="slider">
+
+          <div class="input-container slide__container" data-slide="1">
+
+            <h1>Personal info</h1>
+            <p>Please provide your name, email address, and phone number.</p>
+
+            <div class="input">
+
+              <div class="flex-error">
+                <div class="input-title">Name</div>
+                <div class="error" id="error-name">error</div>
+              </div>
+
+              <div class="input-check">
+                <input class="input-textbox" id="input-name" type="text" onkeyup="nameValidation()" placeholder="ex: Alvin Briones">
+                <img class="checked-icon" id="input-name-checked" src="assets/images/checked.png" alt="">
+              </div>
+
+            </div>
+
+            <div class="input">
+
+              <div class="flex-error">
+                <div class="input-title">Email Address</div>
+                <div class="error" id="error-email">error</div>
+              </div>
+
+              <div class="input-check">
+                <input class="input-textbox" id="input-email" type="text" onkeyup="emailValidation()" placeholder="ex: alvinbriones24@yahoo.com">
+                <img class="checked-icon" id="input-email-checked" src="assets/images/checked.png" alt="">
+              </div>
+
+            </div>
+
+            <div class="input">
+
+              <div class="flex-error">
+                <div class="input-title">Phone number</div>
+                <div class="error" id="error-number">error</div>
+              </div>
+
+              <div class="input-check">
+                <input class="input-textbox" id="input-number" type="text" onkeyup="numberValidation()" onkeypress='return event.charCode >= 48 && event.charCode <= 57' placeholder="ex: 09123456789" maxlength="11">
+                <img class="checked-icon" id="input-number-checked" src="assets/images/checked.png" alt="">
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Step Two -->
+
+          <div class="plan-container slide__container" data-slide="2">
+
+            <h1>Select your plan</h1>
+            <p>You have the option of monthly or yearly billing.</p>
+
+            <div class="plan-tab-container">
+
+              <div class="tab tab--1" data-tab="1">
+                <img src="assets/images/icon-arcade.svg" alt="" class="tab-icon-img">
+
+                <h2 class="plan plan--1">Arcade</h2>
+                <p class="per-month per-month--1" data-monthamount="$9.00" data-exactmonth-amount='9'>$9/mo</p>
+                <p class="per-year per-year--1" data-yearamount="$108.00" data-exactyear-amount='108'>$108/yr</p>
+                <h3 class="free-month">2 months free</h3>
+              </div>
+
+              <div class="tab tab--2" data-tab="2">
+                <img src="assets/images/icon-advanced.svg" alt="" class="tab-icon-img">
+
+                <h2 class="plan plan--2">Advanced</h2>
+                <p class="per-month per-month--2" data-monthamount="$12.00" data-exactmonth-amount='12'>$12/mo</p>
+                <p class="per-year per-year--2" data-yearamount="$144.00" data-exactyear-amount='144'>$144/yr</p>
+                <h3 class="free-month">2 months free</h3>
+              </div>
+
+              <div class="tab tab--3" data-tab="3">
+                <img src="assets/images/icon-pro.svg" alt="" class="tab-icon-img">
+
+                <h2 class="plan plan--3">Pro</h2>
+                <p class="per-month per-month--3" data-monthamount="$15.00" data-exactmonth-amount='15'>$15/mo</p>
+                <p class="per-year per-year--3" data-yearamount="$180.00" data-exactyear-amount='180'>$180/yr</p>
+                <h3 class="free-month">1 months free</h3>
+              </div>
+
+            </div>
+
+            <h2 class="error-plan">Select One Plan</h2>
+
+            <div class="toggle">
+              <h3 class="monthly monthly--active">Monthly</h3>
+              <input type="checkbox" class="checkbox" id="switch" /><label for="switch">Toggle</label>
+              <h3 class="yearly">Yearly</h3>
+            </div>
+            
+          </div>  
+
+          <!-- Step Three -->
+
+          <div class="add-ons-container slide__container" data-slide="3">
+
+            <h1>Pick add-ons</h1>
+            <p>Add-ons help enhance your gaming experience.</p>
+
+            <div class="add-ons-tab-container">
+
+              <div class="add-ons-tab add-tab--1" data-add="1">
+    
+                <div class="add-ons-flex">
+
+                  <div class="add-ons-services">
+                    <h2 class="service--1">Online service</h2>
+                    <p>Access to multiplayer games</p>
+                  </div>
+
+                  <div class="add-ons-price">
+                    <p class="per-month per-month-ao--1" data-monthamount="$1.00" data-ao-exact-monthamount="1">$1/mo</p>
+                    <p class="per-year per-year-ao--1" data-yearamount="$10.00" data-ao-exact-yearamount="10">$10/yr</p>
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="add-ons-tab add-tab--2" data-add="2"> 
+
+                <div class="add-ons-flex">
+
+                  <div class="add-ons-services">
+                    <h2 class="service--2">Larger storage</h2>
+                    <p>Extra 1TB of cloud save</p>
+                  </div>
+
+                  <div class="add-ons-price">
+                    <p class="per-month per-month-ao--2" data-monthamount="$2.00" data-ao-exact-monthamount="2">$2/mo</p>
+                    <p class="per-year per-year-ao--2" data-yearamount="$20.00" data-ao-exact-yearamount="20">$20/yr</p>
+                  </div>
+
+                </div>
+                
+              </div>
+
+              <div class="add-ons-tab add-tab--3" data-add="3">
+
+                <div class="add-ons-flex">
+
+                  <div class="add-ons-services">
+                    <h2 class="service--3">Customizable profile</h2>
+                    <p>Custom theme on your profile</p>
+                  </div>
+
+                  <div class="add-ons-price">
+                    <p class="per-month per-month-ao--3" data-monthamount="$3.00" data-ao-exact-monthamount="3">$3/mo</p>
+                    <p class="per-year per-year-ao--3" data-yearamount="$36.00" data-ao-exact-yearamount="36">$36/yr</p>
+                  </div>
+
+                </div>
+                
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Step Four -->
+
+          <div class="summary-container slide__container">
+
+            <h1>Finishing up</h1>
+            <p>Double-check everything looks OK before confirming.</p>
+
+            <div class="computation-container">
+
+              <div class="chosen-plan">
+
+                <div class="chose-plan-flex">
+
+                  <div>
+                    <div class="chose-plan">plan</div>
+                    <button class="change-button">Change</button>
+                  </div>
+  
+                  <div class="chose-plan-price">plan amount</div>
+  
+                </div>
+
+              </div>
+
+              <div class="chosen-services">
+                
+                <div class="chose-addons-flex chose-addons-flex--1">
+
+                  <div class="chose-service chose-service--1">service</div>
+                  <div class="chose-service-price chose-service-price--1">service amount</div>
+  
+                </div>
+  
+                <div class="chose-addons-flex chose-addons-flex--2">
+  
+                  <div class="chose-service chose-service--2">service</div>
+                  <div class="chose-service-price chose-service-price--2">service amount</div> 
+
+  
+                </div>
+  
+                <div class="chose-addons-flex chose-addons-flex--3">
+  
+                  <div class="chose-service chose-service--3">service</div>
+                  <div class="chose-service-price chose-service-price--3">service amount</div>
+  
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="summary-total">
+
+              <h2>Total</h2>
+              <div class="total-amount">total amount</div>
+
+            </div>
+
+          </div> 
+          
+        </div>      
+        
+        <div class="buttons">
+          <button class="back-button">Go Back</button>
+          <button class="next-button">Next Step</button>
+          <button class="confirm-button">Confirm</button>
+          <button class="skip-button">skip</button>
+        </div>
+
+    </div> 
+
+                      <!-- Thank you Container -->
+
+                      <div class="thankyou-container">
+
+                        <img src="assets/images/cancel.png" alt="" class="close-button">
+
+                        <div class="thankyou-content">
+    
+
+                          <img src="assets/images/icon-thank-you.svg" alt="">
+                          <h1>Thank you!</h1>
+                          <p>Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need support, please feel free to email us at support@loremgaming.com.</p>
+    
+                        </div>
+                        
+                      </div>
+
+  </section>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
